@@ -2,63 +2,300 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Web Test của Tiên</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phòng Y Tế Học Đường - School Health Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background: linear-gradient(135deg, #a8e6cf, #dcedc1);
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #28a745;
+            --danger-color: #dc3545;
+            --light-bg: #f4f7f6;
+            --text-dark: #333;
+        }
+
+        * {
             margin: 0;
-            padding: 50px;
-            transition: 0.5s;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
         }
 
-        h1 {
-            color: #333;
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
         }
 
-        button {
-            padding: 12px 25px;
-            font-size: 16px;
-            border: none;
-            border-radius: 20px;
-            background-color: #ff8b94;
-            color: white;
-            cursor: pointer;
+        /* Navigation */
+        nav {
+            background: #fff;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
             transition: 0.3s;
         }
 
-        button:hover {
-            background-color: #ff4e50;
-            transform: scale(1.05);
+        .nav-links a:hover {
+            color: var(--primary-color);
         }
 
-        #message {
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,123,255,0.8), rgba(0,123,255,0.8)), 
+                        url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .emergency-btn {
+            background: var(--danger-color);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
             margin-top: 20px;
-            font-size: 18px;
-            color: #444;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Services Section */
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Appointment Form */
+        .appointment-section {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button.submit-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 5% 20px;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
-    <h1>Xin chào 👋</h1>
-    <p>Đây là web test đầu tiên của tôi.</p>
+    <nav>
+        <div class="logo"><i class="fas fa-heartbeat"></i> SchoolHealth</div>
+        <ul class="nav-links">
+            <li><a href="#home">Trang chủ</a></li>
+            <li><a href="#services">Dịch vụ</a></li>
+            <li><a href="#schedule">Lịch trực</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
+        </ul>
+    </nav>
 
-    <button onclick="changeBackground()">Bấm vào đây</button>
+    <section class="hero" id="home">
+        <h1>Phòng Y Tế Học Đường</h1>
+        <p>Đồng hành cùng sức khỏe và sự phát triển của học sinh</p>
+        <a href="tel:0123456789" class="emergency-btn">
+            <i class="fas fa-phone-alt"></i> CẤP CỨU: 0123.456.789
+        </a>
+    </section>
 
-    <div id="message"></div>
+    <div class="container">
+        <section id="services">
+            <h2 class="section-title">Dịch Vụ Của Chúng Tôi</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-user-md"></i>
+                    <h3>Khám Sơ Bộ</h3>
+                    <p>Kiểm tra sức khỏe định kỳ và xử lý các vấn đề sức khỏe nhẹ.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-first-aid"></i>
+                    <h3>Sơ Cấp Cứu</h3>
+                    <p>Xử lý kịp thời các chấn thương và tình huống khẩn cấp tại trường.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-pills"></i>
+                    <h3>Cấp Phát Thuốc</h3>
+                    <p>Cung cấp các loại thuốc cơ bản theo chỉ dẫn y tế.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Tư Vấn Tâm Lý</h3>
+                    <p>Hỗ trợ giải đáp thắc mắc về tâm sinh lý lứa tuổi học đường.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" style="margin-top: 80px;">
+            <div class="appointment-section">
+                <h2 style="text-align: center; margin-bottom: 20px;">Đăng Ký Khám / Tư Vấn</h2>
+                <form id="healthForm">
+                    <div class="form-group">
+                        <label>Họ và Tên Học Sinh</label>
+                        <input type="text" id="name" required placeholder="Nguyễn Văn A">
+                    </div>
+                    <div class="form-group">
+                        <label>Lớp</label>
+                        <input type="text" id="class" required placeholder="10A1">
+                    </div>
+                    <div class="form-group">
+                        <label>Lý do khám / Vấn đề cần tư vấn</label>
+                        <textarea id="reason" rows="4" placeholder="Mô tả triệu chứng của em..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Gửi Yêu Cầu</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>Liên Hệ</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Tầng 1, Tòa nhà A, Trường Trung Học ABC</p>
+                <p><i class="fas fa-envelope"></i> yte@school.edu.vn</p>
+            </div>
+            <div>
+                <h3>Giờ Làm Việc</h3>
+                <p>Thứ 2 - Thứ 6: 07:30 - 17:00</p>
+                <p>Thứ 7: 07:30 - 11:30</p>
+            </div>
+            <div>
+                <h3>Liên Kết</h3>
+                <p>Bộ Giáo Dục & Đào Tạo</p>
+                <p>Cổng Thông Tin Y Tế</p>
+            </div>
+        </div>
+        <hr style="margin: 20px 0; border: 0.1px solid #555;">
+        <p style="text-align: center; font-size: 0.8rem;">&copy; 2024 School Health Center. All rights reserved.</p>
+    </footer>
 
     <script>
-        function changeBackground() {
-            const colors = ["#a8e6cf", "#ffd3b6", "#ffaaa5", "#dcedc1"];
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            document.body.style.background = randomColor;
-
-            document.getElementById("message").innerText =
-                "Bạn vừa bấm nút thành công 🎉";
-        }
+        // Xử lý gửi form
+        document.getElementById('healthForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const className = document.getElementById('class').value;
+            
+            alert(`Cảm ơn ${name} (Lớp ${className})! Yêu cầu của em đã được gửi đến phòng y tế. Nhân viên y tế sẽ phản hồi sớm nhất.`);
+            
+            this.reset(); // Xóa dữ liệu form sau khi gửi
+        });
     </script>
-
 </body>
 </html>
