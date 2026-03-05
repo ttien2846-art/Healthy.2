@@ -1,301 +1,236 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phòng Y Tế Học Đường - School Health Center</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>School Health Hub - Gen Z</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
     <style>
         :root {
-            --primary-color: #007bff;
-            --secondary-color: #28a745;
-            --danger-color: #dc3545;
-            --light-bg: #f4f7f6;
-            --text-dark: #333;
+            --primary-gradient: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+            --medical-mint: #2af598;
+            --soft-blue: #e3f2fd;
+            --accent-color: #00b894;
+            --text-dark: #2d3436;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        body { background-color: #f8fafc; color: var(--text-dark); }
 
-        body {
-            background-color: var(--light-bg);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* Navigation */
-        nav {
-            background: #fff;
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 20px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Hero Section */
+        /* --- PHẦN 1: GIỚI THIỆU (HERO) --- */
         .hero {
-            background: linear-gradient(rgba(0,123,255,0.8), rgba(0,123,255,0.8)), 
-                        url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 60vh;
+            height: 90vh;
+            background: var(--primary-gradient);
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             text-align: center;
             color: white;
+            border-radius: 0 0 80px 80px;
             padding: 20px;
+            box-shadow: 0 10px 30px rgba(58, 123, 213, 0.2);
         }
 
-        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
-        .emergency-btn {
-            background: var(--danger-color);
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
+        .hero-content h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            background: rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            padding: 10px 25px;
             border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin-top: 20px;
-            animation: pulse 2s infinite;
+            backdrop-filter: blur(10px);
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        /* Services Section */
-        .container {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 0 20px;
+        /* --- PHẦN 2: DỊCH VỤ (SERVICES) --- */
+        .services { padding: 80px 5%; }
+        
+        .section-tag {
+            text-align: center;
+            color: var(--accent-color);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 10px;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 40px;
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+            color: #0984e3;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
         }
 
         .service-card {
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            transition: 0.3s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 40px;
+            border-radius: 40px;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+            text-align: left;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.03);
         }
 
         .service-card:hover {
+            border-color: var(--medical-mint);
             transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        .service-card i {
-            font-size: 3rem;
-            color: var(--secondary-color);
-            margin-bottom: 15px;
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background: var(--soft-blue);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
         }
 
-        /* Appointment Form */
-        .appointment-section {
-            background: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        .icon-box i { font-size: 2rem; color: #0984e3; }
+
+        .service-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #2d3436; }
+
+        /* --- PHẦN 3: ĐĂNG KÝ (REGISTRATION) --- */
+        .registration { padding: 100px 5%; background: white; }
+
+        .form-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: #f1faff;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.05);
         }
 
-        .form-group {
-            margin-bottom: 15px;
+        .form-info {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-container { padding: 60px; }
+
+        .input-group { margin-bottom: 20px; }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #636e72;
+        }
+
         input, select, textarea {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        button.submit-btn {
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 5px;
-            cursor: pointer;
+            padding: 15px;
+            border: 2px solid #e1e8ed;
+            border-radius: 15px;
             font-size: 1rem;
+            outline: none;
+        }
+
+        input:focus { border-color: #3a7bd5; }
+
+        .btn-submit {
             width: 100%;
-        }
-
-        /* Footer */
-        footer {
-            background: #333;
+            padding: 18px;
+            border: none;
+            border-radius: 15px;
+            background: var(--text-dark);
             color: white;
-            padding: 40px 5% 20px;
-            margin-top: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
         }
 
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
+        .btn-submit:hover { background: #000; transform: scale(1.02); }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 2rem; }
+            .form-wrapper { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 3rem; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo"><i class="fas fa-heartbeat"></i> SchoolHealth</div>
-        <ul class="nav-links">
-            <li><a href="#home">Trang chủ</a></li>
-            <li><a href="#services">Dịch vụ</a></li>
-            <li><a href="#schedule">Lịch trực</a></li>
-            <li><a href="#contact">Liên hệ</a></li>
-        </ul>
-    </nav>
-
-    <section class="hero" id="home">
-        <h1>Phòng Y Tế Học Đường</h1>
-        <p>Đồng hành cùng sức khỏe và sự phát triển của học sinh</p>
-        <a href="tel:0123456789" class="emergency-btn">
-            <i class="fas fa-phone-alt"></i> CẤP CỨU: 0123.456.789
-        </a>
+    <section class="hero">
+        <div class="hero-content">
+            <p>Medical Center</p>
+            <h1>Stay Healthy,<br>Stay Strong.</h1>
+        </div>
     </section>
 
-    <div class="container">
-        <section id="services">
-            <h2 class="section-title">Dịch Vụ Của Chúng Tôi</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fas fa-user-md"></i>
-                    <h3>Khám Sơ Bộ</h3>
-                    <p>Kiểm tra sức khỏe định kỳ và xử lý các vấn đề sức khỏe nhẹ.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-first-aid"></i>
-                    <h3>Sơ Cấp Cứu</h3>
-                    <p>Xử lý kịp thời các chấn thương và tình huống khẩn cấp tại trường.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-pills"></i>
-                    <h3>Cấp Phát Thuốc</h3>
-                    <p>Cung cấp các loại thuốc cơ bản theo chỉ dẫn y tế.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-brain"></i>
-                    <h3>Tư Vấn Tâm Lý</h3>
-                    <p>Hỗ trợ giải đáp thắc mắc về tâm sinh lý lứa tuổi học đường.</p>
-                </div>
+    <section class="services">
+        <span class="section-tag">Care & Support</span>
+        <h2 class="section-title">Dịch Vụ Y Tế</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon-box"><i class="fas fa-user-md"></i></div>
+                <h3>Check-up Toàn Diện</h3>
+                <p>Kiểm tra các chỉ số sức khỏe định kỳ giúp bạn luôn ở trạng thái tốt nhất.</p>
             </div>
-        </section>
-
-        <section id="contact" style="margin-top: 80px;">
-            <div class="appointment-section">
-                <h2 style="text-align: center; margin-bottom: 20px;">Đăng Ký Khám / Tư Vấn</h2>
-                <form id="healthForm">
-                    <div class="form-group">
-                        <label>Họ và Tên Học Sinh</label>
-                        <input type="text" id="name" required placeholder="Nguyễn Văn A">
-                    </div>
-                    <div class="form-group">
-                        <label>Lớp</label>
-                        <input type="text" id="class" required placeholder="10A1">
-                    </div>
-                    <div class="form-group">
-                        <label>Lý do khám / Vấn đề cần tư vấn</label>
-                        <textarea id="reason" rows="4" placeholder="Mô tả triệu chứng của em..."></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Gửi Yêu Cầu</button>
-                </form>
+            <div class="service-card">
+                <div class="icon-box"><i class="fas fa-band-aid"></i></div>
+                <h3>Sơ Cứu Nhanh</h3>
+                <p>Đội ngũ trực chiến luôn sẵn sàng cho mọi vết trầy xước hay đau bụng nhẹ.</p>
             </div>
-        </section>
-    </div>
-
-    <footer>
-        <div class="footer-content">
-            <div>
-                <h3>Liên Hệ</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Tầng 1, Tòa nhà A, Trường Trung Học ABC</p>
-                <p><i class="fas fa-envelope"></i> yte@school.edu.vn</p>
-            </div>
-            <div>
-                <h3>Giờ Làm Việc</h3>
-                <p>Thứ 2 - Thứ 6: 07:30 - 17:00</p>
-                <p>Thứ 7: 07:30 - 11:30</p>
-            </div>
-            <div>
-                <h3>Liên Kết</h3>
-                <p>Bộ Giáo Dục & Đào Tạo</p>
-                <p>Cổng Thông Tin Y Tế</p>
+            <div class="service-card">
+                <div class="icon-box"><i class="fas fa-smile-beam"></i></div>
+                <h3>Góc Tâm Lý</h3>
+                <p>Nơi giải tỏa "stress" thi cử và những tâm tư khó nói cùng các chuyên gia.</p>
             </div>
         </div>
-        <hr style="margin: 20px 0; border: 0.1px solid #555;">
-        <p style="text-align: center; font-size: 0.8rem;">&copy; 2024 School Health Center. All rights reserved.</p>
-    </footer>
+    </section>
 
-    <script>
-        // Xử lý gửi form
-        document.getElementById('healthForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const className = document.getElementById('class').value;
-            
-            alert(`Cảm ơn ${name} (Lớp ${className})! Yêu cầu của em đã được gửi đến phòng y tế. Nhân viên y tế sẽ phản hồi sớm nhất.`);
-            
-            this.reset(); // Xóa dữ liệu form sau khi gửi
-        });
-    </script>
+    <section class="registration">
+        <div class="form-wrapper">
+            <div class="form-info">
+                <h2>Cần hỗ trợ?<br>Đăng ký ngay 🏥</h2>
+                <p style="margin-top: 20px; opacity: 0.9;">Tụi mình sẽ chuẩn bị giường bệnh hoặc thuốc sẵn cho bạn nhé!</p>
+            </div>
+            <div class="form-container">
+                <form action="success.html">
+                    <div class="input-group">
+                        <label>Tên của bạn</label>
+                        <input type="text" placeholder="Họ và tên..." required>
+                    </div>
+                    <div class="input-group">
+                        <label>Lớp</label>
+                        <input type="text" placeholder="Ví dụ: 12A1..." required>
+                    </div>
+                    <div class="input-group">
+                        <label>Chọn dịch vụ</label>
+                        <select required>
+                            <option value="">-- Click để chọn --</option>
+                            <option>Khám sức khỏe</option>
+                            <option>Xin nghỉ ngơi</option>
+                            <option>Tư vấn tâm lý</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit">GỬI YÊU CẦU</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>
