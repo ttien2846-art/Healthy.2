@@ -88,7 +88,7 @@ margin-bottom:15px;
 display:inline-block;
 }
 
-/* SECTION HEADER */
+/* HEADER */
 
 .section-header{
 text-align:center;
@@ -193,7 +193,6 @@ padding:16px;
 border:2px solid #f1f3f5;
 border-radius:18px;
 outline:none;
-transition:0.3s;
 font-size:1rem;
 }
 
@@ -209,7 +208,7 @@ font-size:1.1rem;
 cursor:pointer;
 }
 
-/* SUCCESS */
+/* SUCCESS PAGE */
 
 #success-page{
 display:none;
@@ -239,6 +238,17 @@ align-items:center;
 justify-content:center;
 font-size:3.5rem;
 margin:0 auto 30px;
+}
+
+.btn-home{
+margin-top:30px;
+display:inline-block;
+padding:18px 40px;
+background:#000;
+color:white;
+border-radius:20px;
+text-decoration:none;
+font-weight:700;
 }
 
 /* VISITOR */
@@ -273,8 +283,6 @@ font-weight:600;
 </div>
 </section>
 
-<!-- GIỚI THIỆU Y TẾ HỌC ĐƯỜNG -->
-
 <section class="health-info">
 
 <div class="section-header">
@@ -285,52 +293,20 @@ font-weight:600;
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;align-items:center;">
 
 <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5"
-style="width:100%;border-radius:30px;box-shadow:0 15px 40px rgba(0,0,0,0.1);">
+style="width:100%;border-radius:30px;">
 
 <div>
 <h3 style="margin-bottom:15px;color:var(--primary)">Giới thiệu</h3>
 <p style="line-height:1.7;">
-Y tế học đường giúp chăm sóc và bảo vệ sức khỏe cho học sinh trong môi trường học tập. 
-Phòng y tế không chỉ xử lý các trường hợp đau bụng, chấn thương nhẹ hay mệt mỏi 
+Y tế học đường giúp chăm sóc và bảo vệ sức khỏe cho học sinh trong môi trường học tập.
+Phòng y tế không chỉ xử lý các trường hợp đau bụng, chấn thương nhẹ hay mệt mỏi
 mà còn giúp tư vấn sức khỏe thể chất và tinh thần.
 </p>
-
-<p style="margin-top:15px;line-height:1.7;">
-Một môi trường học tập khỏe mạnh sẽ giúp học sinh học tập tốt hơn,
-giảm căng thẳng và tạo cảm giác an toàn khi ở trường.
-</p>
-</div>
-
-</div>
-
-<div style="margin-top:70px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;">
-
-<div style="background:white;padding:25px;border-radius:25px;box-shadow:0 10px 30px rgba(0,0,0,0.05);">
-<img src="https://images.unsplash.com/photo-1603398938378-e54eab446dde"
-style="width:100%;border-radius:20px;margin-bottom:15px;">
-<h3>Uống đủ nước</h3>
-<p>Uống 1.5 – 2 lít nước mỗi ngày giúp cơ thể hoạt động tốt và tăng sự tập trung khi học.</p>
-</div>
-
-<div style="background:white;padding:25px;border-radius:25px;box-shadow:0 10px 30px rgba(0,0,0,0.05);">
-<img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289"
-style="width:100%;border-radius:20px;margin-bottom:15px;">
-<h3>Ngủ đủ giấc</h3>
-<p>Học sinh nên ngủ khoảng 7–8 tiếng mỗi đêm để đảm bảo sức khỏe và trí nhớ tốt.</p>
-</div>
-
-<div style="background:white;padding:25px;border-radius:25px;box-shadow:0 10px 30px rgba(0,0,0,0.05);">
-<img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d"
-style="width:100%;border-radius:20px;margin-bottom:15px;">
-<h3>Vận động</h3>
-<p>Tập thể dục thường xuyên giúp tăng sức đề kháng và giảm stress trong học tập.</p>
 </div>
 
 </div>
 
 </section>
-
-<!-- SERVICES -->
 
 <section class="services">
 
@@ -356,13 +332,11 @@ style="width:100%;border-radius:20px;margin-bottom:15px;">
 <div class="service-card">
 <div class="icon-circle"><i class="fas fa-comments"></i></div>
 <h3>Tư Vấn Tâm Lý</h3>
-<p>Nơi bạn có thể chia sẻ áp lực học tập và cảm xúc.</p>
+<p>Nơi bạn có thể chia sẻ áp lực học tập.</p>
 </div>
 
 </div>
 </section>
-
-<!-- FORM -->
 
 <section class="registration">
 
@@ -370,7 +344,7 @@ style="width:100%;border-radius:20px;margin-bottom:15px;">
 
 <div class="form-info">
 <h2>Book lịch ngay! 🏥</h2>
-<p style="margin-top:20px;">Tụi mình luôn sẵn sàng hỗ trợ bạn trong giờ học.</p>
+<p style="margin-top:20px;">Tụi mình luôn sẵn sàng hỗ trợ bạn.</p>
 </div>
 
 <div class="form-container">
@@ -413,6 +387,9 @@ style="width:100%;border-radius:20px;margin-bottom:15px;">
 <div class="check-icon"><i class="fas fa-check"></i></div>
 <h2>GỬI THÀNH CÔNG!</h2>
 <p>Yêu cầu của bạn đã được gửi đến phòng y tế.</p>
+
+<a href="#" class="btn-home" onclick="goBack()">Quay về trang chủ</a>
+
 </div>
 </div>
 
@@ -430,7 +407,15 @@ form.addEventListener('submit',function(e){
 e.preventDefault()
 mainPage.style.display='none'
 successPage.style.display='flex'
+window.scrollTo(0,0)
 })
+
+function goBack(){
+successPage.style.display='none'
+mainPage.style.display='block'
+form.reset()
+window.scrollTo(0,0)
+}
 
 let count=localStorage.getItem("visitorCount")
 
