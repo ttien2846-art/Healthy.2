@@ -409,65 +409,7 @@ let count=localStorage.getItem("visitorCount")
 if(!count){
 count=0
 }
-<section class="contact">
 
-<div class="section-header">
-<p style="color:var(--mint);font-weight:800;letter-spacing:2px;">CONTACT</p>
-<h2>Liên hệ & Địa chỉ khám</h2>
-</div>
-
-<div class="contact-grid">
-
-<div class="contact-card">
-<div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-<h3>Địa chỉ phòng y tế</h3>
-<p>
-Phòng Y Tế Trường THPT ABC<br>
-123 Nguyễn Trãi, Quận 1<br>
-TP. Hồ Chí Minh
-</p>
-</div>
-
-<div class="contact-card">
-<div class="contact-icon"><i class="fas fa-phone"></i></div>
-<h3>Số điện thoại</h3>
-<p>
-0901 234 567<br>
-028 1234 5678
-</p>
-</div>
-
-<div class="contact-card">
-<div class="contact-icon"><i class="fas fa-envelope"></i></div>
-<h3>Email liên hệ</h3>
-<p>
-ytehocduong@school.edu.vn
-</p>
-</div>
-
-<div class="contact-card">
-<div class="contact-icon"><i class="fas fa-clock"></i></div>
-<h3>Thời gian hoạt động</h3>
-<p>
-Thứ 2 - Thứ 6<br>
-7:00 - 17:00
-</p>
-</div>
-
-</div>
-
-<div class="map-box">
-<iframe 
-src="https://www.google.com/maps?q=Ho%20Chi%20Minh&output=embed"
-width="100%" 
-height="350" 
-style="border:0;"
-allowfullscreen=""
-loading="lazy">
-</iframe>
-</div>
-
-</section>
 count++
 
 localStorage.setItem("visitorCount",count)
