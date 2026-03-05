@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Test của Tiên</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #a8e6cf, #dcedc1);
+            margin: 0;
+            padding: 50px;
+            transition: 0.5s;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 20px;
+            background-color: #ff8b94;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff4e50;
+            transform: scale(1.05);
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Xin chào 👋</h1>
+    <p>Đây là web test đầu tiên của tôi.</p>
+
+    <button onclick="changeBackground()">Bấm vào đây</button>
+
+    <div id="message"></div>
+
+    <script>
+        function changeBackground() {
+            const colors = ["#a8e6cf", "#ffd3b6", "#ffaaa5", "#dcedc1"];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.background = randomColor;
+
+            document.getElementById("message").innerText =
+                "Bạn vừa bấm nút thành công 🎉";
+        }
+    </script>
+
+</body>
+</html>
